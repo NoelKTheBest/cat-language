@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn8xsuf6rfnut"]
+
+[ext_resource type="Texture2D" uid="uid://bx7qa3gxdwtlm" path="res://Sprite-0001.png" id="1_0t5kk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_780gp"]
+radius = 15.0
+
+[node name="Sprite-0001" type="Sprite2D"]
+texture = ExtResource("1_0t5kk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_780gp")

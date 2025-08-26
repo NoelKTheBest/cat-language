@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://yvu8k7hrqd8p"]
+
+[ext_resource type="Texture2D" uid="uid://puh1cyscdg3a" path="res://icon.svg" id="1_gtqs8"]
+[ext_resource type="Script" path="res://opening_path.gd" id="1_jhfa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37m5n"]
+size = Vector2(160, 50)
+
+[sub_resource type="Animation" id="Animation_rmf1g"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingBlock1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, -105), Vector2(0, -130)]
+}
+
+[sub_resource type="Animation" id="Animation_kx4bx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingBlock1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s2ils"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingBlock1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -130), Vector2(0, -75), Vector2(0, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hi164"]
+_data = {
+"RESET": SubResource("Animation_kx4bx"),
+"close": SubResource("Animation_s2ils"),
+"open": SubResource("Animation_rmf1g")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jhfa4")
+
+[node name="MovingBlock1" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingBlock1"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1.25, 0.390625)
+texture = ExtResource("1_gtqs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlock1"]
+shape = SubResource("RectangleShape2D_37m5n")
+
+[node name="MovingBlock2" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingBlock2"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1.25, 0.390625)
+texture = ExtResource("1_gtqs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlock2"]
+shape = SubResource("RectangleShape2D_37m5n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hi164")
+}

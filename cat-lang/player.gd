@@ -39,3 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.y == JUMP_VELOCITY: animator.play("jump")
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	attacking = false
