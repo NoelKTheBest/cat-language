@@ -1,17 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfg2tqeoxp2y1"]
+[gd_scene load_steps=14 format=3 uid="uid://cfg2tqeoxp2y1"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_ike27"]
 [ext_resource type="Texture2D" uid="uid://puh1cyscdg3a" path="res://icon.svg" id="1_lljl3"]
+[ext_resource type="Texture2D" uid="uid://c3j51amcweyn" path="res://spotted_bg.png" id="2_3e1ma"]
 [ext_resource type="PackedScene" uid="uid://d20mgpb3yenk" path="res://slow_block.tscn" id="2_bxvgp"]
 [ext_resource type="PackedScene" uid="uid://b3xe53565tko" path="res://Player.tscn" id="2_fh2oy"]
 [ext_resource type="PackedScene" uid="uid://yvu8k7hrqd8p" path="res://opening_path.tscn" id="4_vwi8q"]
 [ext_resource type="PackedScene" uid="uid://d3h6hss557l5u" path="res://moving_platform.tscn" id="6_8kjuf"]
 [ext_resource type="PackedScene" uid="uid://cn8xsuf6rfnut" path="res://candle.tscn" id="6_i4m48"]
+[ext_resource type="Texture2D" uid="uid://dc1cgxboutfrp" path="res://Circle.png" id="7_1jliq"]
+[ext_resource type="PackedScene" uid="uid://bcquudai5ee4e" path="res://platform_switch.tscn" id="8_hj2ln"]
+[ext_resource type="Texture2D" uid="uid://bx7qa3gxdwtlm" path="res://Sprite-0001.png" id="8_opnhi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cnq7"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_scko0"]
+radius = 85.2878
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ike27")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(952, -207)
+scale = Vector2(32.1406, 52.1406)
+texture = ExtResource("2_3e1ma")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -156,30 +168,235 @@ texture = ExtResource("1_lljl3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
 shape = SubResource("RectangleShape2D_3cnq7")
 
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-383, -214)
+scale = Vector2(-6.2428, 84.9867)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D13"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2004, -203)
+scale = Vector2(-6.2428, 84.9867)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D14"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-49.9999, 719)
+rotation = 3.14159
+scale = Vector2(65.9628, -2.74669)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D15"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-383, -1898)
+rotation = 3.14159
+scale = Vector2(6.2428, -84.9867)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D16"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2004, -1864)
+rotation = 3.14159
+scale = Vector2(6.2428, -84.9867)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D17"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
 [node name="StaticBody2D9" parent="." instance=ExtResource("2_bxvgp")]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(715, 1011)
 scale = Vector2(6, 3.4)
 
+[node name="Node2D" parent="." instance=ExtResource("4_vwi8q")]
+position = Vector2(1046, 939)
+scale = Vector2(2, 2)
+
+[node name="Candle1" parent="." instance=ExtResource("6_i4m48")]
+position = Vector2(715, 945)
+scale = Vector2(1.75, 1.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="Candle1"]
+modulate = Color(0.46, 0.46, 0.46, 0.6)
+position = Vector2(-0.000244141, -2.85657)
+scale = Vector2(0.258929, 0.251531)
+texture = ExtResource("7_1jliq")
+
+[node name="SwitchingPlatform" parent="." instance=ExtResource("8_hj2ln")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(632, 569)
+scale = Vector2(5, 5)
+
+[node name="SwitchingPlatform2" parent="." instance=ExtResource("8_hj2ln")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(371, 378)
+scale = Vector2(5, 5)
+start_as_circle = true
+
+[node name="SwitchingPlatform3" parent="." instance=ExtResource("8_hj2ln")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 247)
+scale = Vector2(5, 5)
+start_as_circle = true
+
+[node name="SwitchingPlatform4" parent="." instance=ExtResource("8_hj2ln")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(321, 140)
+scale = Vector2(5, 5)
+
+[node name="SwitchingPlatform5" parent="." instance=ExtResource("8_hj2ln")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(6.10352e-05, 122)
+scale = Vector2(5, 5)
+
+[node name="moving_platform_main_node" type="Node2D" parent="."]
+position = Vector2(1630, 1600)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+
+[node name="moving_platform_main_node2" type="Node2D" parent="."]
+position = Vector2(-180, 72)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node2" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 1.0
+
+[node name="special_moving_platform_main_node3" type="Node2D" parent="."]
+position = Vector2(50, -499)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="special_moving_platform_main_node3" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.2
+
+[node name="Candle4" type="Sprite2D" parent="special_moving_platform_main_node3/MovingPlatform"]
+position = Vector2(0, -38.5)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("8_opnhi")
+
+[node name="Sprite2D" type="Sprite2D" parent="special_moving_platform_main_node3/MovingPlatform/Candle4"]
+modulate = Color(0.46, 0.46, 0.46, 0.6)
+position = Vector2(-0.000244141, -2.85657)
+scale = Vector2(0.258929, 0.251531)
+texture = ExtResource("7_1jliq")
+
+[node name="Area2D" type="Area2D" parent="special_moving_platform_main_node3/MovingPlatform"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="special_moving_platform_main_node3/MovingPlatform/Area2D"]
+position = Vector2(0, -82)
+shape = SubResource("CircleShape2D_scko0")
+
+[node name="moving_platform_main_node4" type="Node2D" parent="."]
+position = Vector2(305, -312)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node4" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.75
+
+[node name="moving_platform_main_node5" type="Node2D" parent="."]
+position = Vector2(577, -401)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node5" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.5
+
+[node name="moving_platform_main_node6" type="Node2D" parent="."]
+position = Vector2(813, -159)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node6" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.6
+
+[node name="moving_platform_main_node7" type="Node2D" parent="."]
+position = Vector2(1046, -788)
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node7" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.25
+
+[node name="moving_platform_main_node8" type="Node2D" parent="."]
+position = Vector2(1267, -1333)
+rotation = 0.00635937
+metadata/_edit_group_ = true
+
+[node name="MovingPlatform" parent="moving_platform_main_node8" instance=ExtResource("6_8kjuf")]
+scale = Vector2(2, 2)
+animation_delay = 0.1
+
+[node name="Candle2" type="Sprite2D" parent="."]
+position = Vector2(632, 492)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("8_opnhi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Candle2"]
+modulate = Color(0.46, 0.46, 0.46, 0.6)
+position = Vector2(-0.000244141, -2.85657)
+scale = Vector2(0.258929, 0.251531)
+texture = ExtResource("7_1jliq")
+
+[node name="Candle3" type="Sprite2D" parent="."]
+position = Vector2(371, 301)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("8_opnhi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Candle3"]
+modulate = Color(0.46, 0.46, 0.46, 0.6)
+position = Vector2(-0.000244141, -2.85657)
+scale = Vector2(0.258929, 0.251531)
+texture = ExtResource("7_1jliq")
+
 [node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_fh2oy")]
-position = Vector2(1631, 1419)
+position = Vector2(50, -634)
 scale = Vector2(4.44, 4.44)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("4_vwi8q")]
-position = Vector2(1046, 939)
-scale = Vector2(2, 2)
+[connection signal="body_entered" from="Candle1/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Candle1/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="special_moving_platform_main_node3/MovingPlatform/Area2D" to="special_moving_platform_main_node3/MovingPlatform" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="special_moving_platform_main_node3/MovingPlatform/Area2D" to="special_moving_platform_main_node3/MovingPlatform" method="_on_area_2d_body_exited"]
 
-[node name="MovingPlatform" parent="." instance=ExtResource("6_8kjuf")]
-scale = Vector2(2, 2)
-
-[node name="Sprite-0001" parent="." instance=ExtResource("6_i4m48")]
-position = Vector2(715, 945)
-scale = Vector2(1.75, 1.75)
-
-[connection signal="body_entered" from="Sprite-0001/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Sprite-0001/Area2D" to="." method="_on_area_2d_body_exited"]
-
-[editable path="Sprite-0001"]
+[editable path="Candle1"]
+[editable path="special_moving_platform_main_node3/MovingPlatform"]
