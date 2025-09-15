@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfg2tqeoxp2y1"]
+[gd_scene load_steps=18 format=3 uid="uid://cfg2tqeoxp2y1"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_ike27"]
 [ext_resource type="Texture2D" uid="uid://puh1cyscdg3a" path="res://icon.svg" id="1_lljl3"]
@@ -11,11 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://dc1cgxboutfrp" path="res://Circle.png" id="7_1jliq"]
 [ext_resource type="PackedScene" uid="uid://bcquudai5ee4e" path="res://platform_switch.tscn" id="8_hj2ln"]
 [ext_resource type="Texture2D" uid="uid://bx7qa3gxdwtlm" path="res://Sprite-0001.png" id="8_opnhi"]
+[ext_resource type="AudioStream" uid="uid://c7wdpyt50e8qp" path="res://La Gata Negra.mp3" id="12_87qaa"]
+[ext_resource type="AudioStream" uid="uid://dp4jyobh1c4h7" path="res://unedited cat-meow-1-fx-323465.mp3" id="13_q5hiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cnq7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_scko0"]
 radius = 85.2878
+
+[sub_resource type="Theme" id="Theme_m35yt"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlmok"]
+radius = 208.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ike27")
@@ -36,6 +47,19 @@ scale = Vector2(0.155427, 0.176362)
 texture = ExtResource("1_lljl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1485, 2000)
+scale = Vector2(57.7905, 3.16)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D20"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D20"]
 shape = SubResource("RectangleShape2D_3cnq7")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -114,6 +138,19 @@ scale = Vector2(0.155427, 0.176362)
 texture = ExtResource("1_lljl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2002, 1331)
+scale = Vector2(6.63051, 65.52)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D21"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
 shape = SubResource("RectangleShape2D_3cnq7")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
@@ -236,6 +273,34 @@ texture = ExtResource("1_lljl3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
 shape = SubResource("RectangleShape2D_3cnq7")
 
+[node name="StaticBody2D18" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(813, -2748)
+rotation = 3.14159
+scale = Vector2(125, 10)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D18"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1724, -1443)
+rotation = 3.14159
+scale = Vector2(32.12, 4.559)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D19"]
+scale = Vector2(0.155427, 0.176362)
+texture = ExtResource("1_lljl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19"]
+shape = SubResource("RectangleShape2D_3cnq7")
+
 [node name="StaticBody2D9" parent="." instance=ExtResource("2_bxvgp")]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(715, 1011)
@@ -298,7 +363,7 @@ scale = Vector2(2, 2)
 animation_delay = 1.0
 
 [node name="special_moving_platform_main_node3" type="Node2D" parent="."]
-position = Vector2(50, -499)
+position = Vector2(50, -412)
 metadata/_edit_group_ = true
 
 [node name="MovingPlatform" parent="special_moving_platform_main_node3" instance=ExtResource("6_8kjuf")]
@@ -324,7 +389,7 @@ position = Vector2(0, -82)
 shape = SubResource("CircleShape2D_scko0")
 
 [node name="moving_platform_main_node4" type="Node2D" parent="."]
-position = Vector2(305, -312)
+position = Vector2(305, -262)
 metadata/_edit_group_ = true
 
 [node name="MovingPlatform" parent="moving_platform_main_node4" instance=ExtResource("6_8kjuf")]
@@ -332,7 +397,7 @@ scale = Vector2(2, 2)
 animation_delay = 0.75
 
 [node name="moving_platform_main_node5" type="Node2D" parent="."]
-position = Vector2(577, -401)
+position = Vector2(577, -340)
 metadata/_edit_group_ = true
 
 [node name="MovingPlatform" parent="moving_platform_main_node5" instance=ExtResource("6_8kjuf")]
@@ -348,7 +413,7 @@ scale = Vector2(2, 2)
 animation_delay = 0.6
 
 [node name="moving_platform_main_node7" type="Node2D" parent="."]
-position = Vector2(1046, -788)
+position = Vector2(1046, -413)
 metadata/_edit_group_ = true
 
 [node name="MovingPlatform" parent="moving_platform_main_node7" instance=ExtResource("6_8kjuf")]
@@ -356,7 +421,7 @@ scale = Vector2(2, 2)
 animation_delay = 0.25
 
 [node name="moving_platform_main_node8" type="Node2D" parent="."]
-position = Vector2(1267, -1333)
+position = Vector2(1267, -635)
 rotation = 0.00635937
 metadata/_edit_group_ = true
 
@@ -387,16 +452,105 @@ scale = Vector2(0.258929, 0.251531)
 texture = ExtResource("7_1jliq")
 
 [node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_fh2oy")]
-position = Vector2(50, -634)
+position = Vector2(79, 1921)
 scale = Vector2(4.44, 4.44)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
+[node name="TextEdit" type="TextEdit" parent="CharacterBody2D"]
+visible = false
+offset_left = -55.8559
+offset_top = -45.4955
+offset_right = -47.8559
+offset_bottom = -37.4955
+scale = Vector2(13.5346, 2.98763)
+theme_override_font_sizes/font_size = 6
+editable = false
+
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -56.0
+offset_top = -67.0
+offset_right = 52.0
+offset_bottom = -12.0
+theme = SubResource("Theme_m35yt")
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+scale = Vector2(0.225225, 0.225225)
+stream = ExtResource("12_87qaa")
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+scale = Vector2(0.225225, 0.225225)
+stream = ExtResource("13_q5hiy")
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(0, 407)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Checkpoint1" type="Area2D" parent="."]
+position = Vector2(-704, 3599)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Checkpoint2" type="Area2D" parent="."]
+position = Vector2(-1240, 3020)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Checkpoint3" type="Area2D" parent="."]
+position = Vector2(-592, 2515)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Checkpoint4" type="Area2D" parent="."]
+position = Vector2(-1841, 1873)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Checkpoint5" type="Area2D" parent="."]
+position = Vector2(-704, 1086)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint5"]
+position = Vector2(1696, -2108)
+shape = SubResource("CircleShape2D_hlmok")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="EndGame" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Candle1/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Candle1/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="special_moving_platform_main_node3/MovingPlatform/Area2D" to="special_moving_platform_main_node3/MovingPlatform" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="special_moving_platform_main_node3/MovingPlatform/Area2D" to="special_moving_platform_main_node3/MovingPlatform" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
+[connection signal="body_entered" from="Checkpoint1" to="." method="_on_checkpoint_1_body_entered"]
+[connection signal="body_entered" from="Checkpoint2" to="." method="_on_checkpoint_2_body_entered"]
+[connection signal="body_entered" from="Checkpoint3" to="." method="_on_checkpoint_3_body_entered"]
+[connection signal="body_entered" from="Checkpoint4" to="." method="_on_checkpoint_4_body_entered"]
+[connection signal="body_entered" from="Checkpoint5" to="." method="_on_checkpoint_5_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EndGame" to="." method="_on_end_game_timeout"]
 
 [editable path="Candle1"]
 [editable path="special_moving_platform_main_node3/MovingPlatform"]
